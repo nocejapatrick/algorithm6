@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Algorithm VI Problem 1
+        function resetNegatives(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] < 0) {
+                    arr[i] = 0;
+                }
+            }
+            return arr;
+        }
+        console.log(resetNegatives([1, 2, -1, -3]));
+        console.log(resetNegatives([1, -2, -2, -6, 3, 2]));
+
+
+        // Algorithm VI Problem 2
+        function moveForward(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                arr[i] = arr[i + 1];
+            }
+            arr[arr.length - 1] = 0;
+            return arr;
+        }
+        console.log(moveForward([1, 2, 3]));
+        console.log(moveForward([64, 345, 53, 454, 234]));
+
+        // Algorithm VI Problem 3
+        function returnReversed(arr) {
+            for (var i = 0, x = arr.length - 1; i < Math.floor(arr.length / 2); i++) {
+                arr[i] = arr[i] + arr[x];
+                arr[x] = arr[i] - arr[x];
+                arr[i] = arr[i] - arr[x];
+                x--;
+            }
+            return arr;
+        }
+        console.log(returnReversed([1, 8, 3, 43]));
+        console.log(returnReversed([2, 6, 8, 10, 12]));
+
+        // Algorithm VI Problem 4
+        function repeatTwice(arr) {
+            var twiceArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                twiceArr.push(arr[i]);
+                twiceArr.push(arr[i]);
+            }
+            return twiceArr;
+        }
+        console.log(repeatTwice([4, "Ulysses", 42, false]));
+        console.log(repeatTwice([4, 5, "Coding", true, 990, false]));
+    </script>
+</body>
+
+</html>
